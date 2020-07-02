@@ -167,6 +167,10 @@ class BTCVRegtest(AbstractNet):
     LN_DNS_SEEDS = []
 
 
+class BTCVRegtestTestnetBitcoinVaultGlobal(BTCVRegtest):
+    DEFAULT_SERVERS = read_json('servers_regtest-testnet-btcv-global.json', {})
+
+
 class BitcoinSimnet(BitcoinTestnet):
 
     WIF_PREFIX = 0x64
@@ -201,4 +205,10 @@ def set_regtest():
 
 def set_btcv_regtest():
     global net
+    print("DUPAAAA")
     net = BTCVRegtest
+
+def set_btcv_regtest_testnet_bitcoin_vault_global():
+    global net
+    print("DUPXXXX")
+    net = BTCVRegtestTestnetBitcoinVaultGlobal
