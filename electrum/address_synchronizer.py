@@ -30,7 +30,7 @@ from typing import TYPE_CHECKING, Dict, Optional, Set, Tuple, NamedTuple, Sequen
 
 from . import bitcoin
 from .bitcoin import COINBASE_MATURITY
-from .three_keys.transaction import TxType
+from .three_keys.transaction import TxType, ThreeKeysTransaction
 from .util import profiler, bfh, TxMinedInfo
 from .transaction import Transaction, TxOutput, TxInput, PartialTxInput, TxOutpoint, PartialTransaction
 from .synchronizer import Synchronizer

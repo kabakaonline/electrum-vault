@@ -7,7 +7,7 @@ from electrum.storage import WalletStorage
 from electrum.wallet import Wallet
 from electrum import constants
 
-from .test_wallet import WalletTestCase
+from electrum.tests.test_wallet import WalletTestCase
 
 
 # TODO add other wallet types: 2fa, xpub-only
