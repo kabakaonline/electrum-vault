@@ -152,6 +152,8 @@ class BitcoinVaultMainnet(BitcoinMainnet):
     ADDRTYPE_P2SH = 60
     SEGWIT_HRP = "royale"
     GENESIS = "0000000028ce26975b32feda3d75ac3fe10372f75062366cfba4e934dcc6a48b"
+    DEFAULT_SERVERS = read_json('servers_btcv.json', {})
+    CHECKPOINTS = read_json('checkpoints_btcv.json', [])
     BLOCK_HEIGHT_FIRST_LIGHTNING_CHANNELS = 0
     BIP44_COIN_TYPE = 440
 
@@ -161,6 +163,8 @@ class BitcoinVaultTestnet(BitcoinTestnet):
     GENESIS = "0000000092bdcddd8bcf515ef5820dfc05dafaf708d316b35cd841c59f498637"
     CHECKPOINTS = []
     SEGWIT_HRP = "troyale"
+    DEFAULT_SERVERS = read_json('servers_btcv_testnet.json', {})
+    CHECKPOINTS = read_json('checkpoints_btcv_testnet.json', [])
     LN_DNS_SEEDS = []
 
 
@@ -169,6 +173,8 @@ class BitcoinVaultRegtest(BitcoinVaultTestnet):
     GENESIS = "01cead69f2b51e214e1c2cd50e3744428cae526db87b2ff8f32489ff801d0f1d"
     CHECKPOINTS = []
     SEGWIT_HRP = "rtroyale"
+    DEFAULT_SERVERS = read_json('servers_btcv_regtest.json', {})
+    CHECKPOINTS = read_json('checkpoints_btcv_regtest.json', [])
     LN_DNS_SEEDS = []
 
 
