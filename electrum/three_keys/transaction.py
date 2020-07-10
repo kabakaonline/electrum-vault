@@ -1,25 +1,5 @@
-from enum import IntEnum
-
+from electrum.three_keys.tx_type import TxType
 from electrum.transaction import Transaction
-
-
-class TxType(IntEnum):
-    NONVAULT = 0
-    ALERT_PENDING = 1
-    ALERT_RECOVERED = 2
-    RECOVERY = 3
-    INSTANT = 4
-    ALERT_CONFIRMED = 5
-
-    @classmethod
-    def from_str(cls, str_type: str):
-        for t in cls:
-            if t.name == str_type:
-                return t
-            if str(t.value) == str_type:
-                return t
-        raise ValueError(f"Cannot get TxType for '{str_type}'")
-
 
 class ThreeKeysTransaction(Transaction):
     def __init__(self, raw: str, tx_type: TxType):
