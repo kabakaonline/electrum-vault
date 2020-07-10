@@ -1,6 +1,5 @@
-from PyQt5.QtWidgets import QVBoxLayout, QLabel, QPushButton, QComboBox
+from PyQt5.QtWidgets import QVBoxLayout, QLabel, QPushButton, QComboBox, QWidget
 
-from .send_tab import AlertTransactionListWidget
 from .util import read_QIcon
 from .main_window import ElectrumWindow
 from electrum.i18n import _
@@ -30,7 +29,7 @@ class ElectrumARWindow(ElectrumWindow):
 
         layout.addWidget(combo_box)
 
-        widget = AlertTransactionListWidget(parent=self)
+        widget = QWidget(parent=self)
         widget.setLayout(layout)
 
         button = QPushButton('Recovery')
