@@ -2321,6 +2321,16 @@ class TwoKeysWallet(Simple_Deterministic_Wallet):
                 filtered_utxos.append(utxo)
         return filtered_utxos
 
+    def get_atx_list(self):
+        atx = []
+        for tx_hash, tx in self.db.transactions.items():
+            if tx.tx_type == TxType.ALERT_PENDING:
+                atx.append(tx)
+        return atx
+
+    def prepare_and_sign_recovery_transaction(self, alert_transaction, target_address, recovery_privkey, password):
+        pass
+
     def sign_transaction(self, tx: Transaction, password) -> Optional[PartialTransaction]:
         if self.is_watching_only():
             return
